@@ -90,9 +90,10 @@ public class ToDoActivity extends AppCompatActivity {
             mClient = new MobileServiceClient(
                     "https://xamtest.azure-mobile.net/",
                     "",
-                    this).withFilter(new ProgressFilter());
+                    this).withFilter(new LogServiceFilter());
 
             // Get the Mobile Service Table instance to use
+            //mClient.withFilter();
 
             mToDoTable = mClient.getTable(ToDoItem.class);
 
